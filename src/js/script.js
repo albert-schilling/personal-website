@@ -1,13 +1,7 @@
-
-const mainElement = document.getElementsByTagName('main')[0];
-mainElement.addEventListener('scroll', () => {
-  checkInSight('article','fade-out');
-});
-
-// Function to calculate if an element with specified className
+// Function checkInSight to calculate if an element with specified className
 // is inside the viewport (> 100px) and then toggle specified className "toggleClass"
 function checkInSight (className, toggleClass) {
-  let fadeOutArticlesArray = document.getElementsByTagName(className); 
+  let fadeOutArticlesArray = document.getElementsByClassName(className); 
 
   for (let i = 1; i <= fadeOutArticlesArray.length; i++) {
     let ArticleID = fadeOutArticlesArray[i - 1].id;
@@ -32,4 +26,11 @@ function checkInSight (className, toggleClass) {
   }
 }
 
-checkInSight('article','fade-out');
+// Initial call of function checkInSight
+checkInSight('fade-effect','fade-out');
+
+// Add scroll event and call specified functions
+const mainElement = document.getElementsByTagName('main')[0];
+mainElement.addEventListener('scroll', () => {
+  checkInSight('fade-effect','fade-out');
+});
