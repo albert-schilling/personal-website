@@ -1,0 +1,15 @@
+// Footer Navigation for mobile View:
+
+.footer-nav {
+  display: grid;
+  grid-gap: 1px;
+  grid-template: 1fr / repeat(3, 1fr);
+  height: 100%;
+}
+
+.footer-nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary-color;
+}

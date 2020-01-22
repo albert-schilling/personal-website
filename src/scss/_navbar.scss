@@ -1,0 +1,70 @@
+// navbar
+
+.navbar {
+  grid-area: navbar;
+  display: grid;
+  grid-template: auto auto / repeat(2, auto);
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template: auto / repeat(6, auto);
+    grid-gap: 10px;
+    padding: 0 20px;
+    justify-content: flex-start;
+  }
+}
+
+.navbar__brandname,
+.navbar__item {
+  text-decoration: none;
+  color: $dark;
+}
+
+.navbar__brandname {
+  vertical-align: sub;
+  font-size: 1.2rem;
+}
+
+.navbar__item {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.navbar__toggler {
+  font-size: 1.4rem;
+  color: $dark;
+  cursor: pointer;
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
+.navbar__dropdown {
+  display: none;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
+.navbar__dropdown__item {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.navbar:hover .navbar__dropdown,
+.navbar:active .navbar__dropdown {
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
+
+.navbar__dropdown__link {
+  color: $dark;
+  text-decoration: none;
+}

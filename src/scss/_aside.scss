@@ -1,0 +1,27 @@
+// Aside navigation / contact buttons
+
+aside {
+  grid-area: aside;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: auto;
+  width: auto;
+  padding: 80px 20px;
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.aside-nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 100px;
+  height: 60px;
+  border-radius: 6px;
+  background: $primary-color;
+  border: 1px solid $background-color;
+}
+

@@ -1,0 +1,173 @@
+// Classes
+
+.aside-nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 100px;
+  height: 60px;
+  border-radius: 6px;
+  background: $primary-color;
+  border: 1px solid $background-color;
+}
+
+.subline {
+  font-size: 2rem;
+  display: block;
+  margin: 10px 0;
+}
+
+.img-rounded {
+  border-radius: 50%;
+}
+
+.img-profile {
+  max-width: 300px;
+  width: 100%;
+}
+
+.img-centered {
+  align-self: center;
+}
+
+.img-reference {
+  background: white;
+  padding: 10px;
+}
+
+.img-portrait {
+  border-radius: 50%;
+  max-width: 300px;
+  width: 100%;
+  align-self: center;
+  margin: 10px 0;
+}
+
+.img-portrait--left {
+  border-radius: 50%;
+  max-width: 275px;
+  width: 100%;
+  align-self: center;
+  margin: 10px 0;
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.img-portrait--right {
+  border-radius: 50%;
+  max-width: 300px;
+  width: 100%;
+  align-self: center;
+  margin: 20px 0;
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  padding: 10px 10px 4px 10px;
+  background: $primary-color;
+  // color: $background-color;
+  color: $dark;
+  font-size: 1.2rem;
+}
+
+.badge--border {
+  display: inline-block;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  padding: 10px 10px 4px 10px;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  font-size: 1.2rem;
+}
+
+.large-unicode {
+  font-size: 6rem;
+  text-align: center;
+}
+
+.link-with-icon {
+  display: grid;
+  grid-template: auto / auto auto;
+  margin: 10px 0;
+  width: max-content;
+  border-radius: 6px;
+  align-items: center;
+  background: $font-color;
+  color: $background-color;
+  transition: all 1s ease-in;
+}
+
+.link-with-icon__icon {
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: $primary-color;
+}
+
+.link-with-icon__link {
+  margin: 0 10px;
+}
+
+.link-with-icon__link--hidden {
+  display: none;
+  margin: 0 0 0 -50px;
+  width: 0;
+  transition: all 1s ease-in-out;
+}
+
+.link-with-icon:hover .link-with-icon__link--hidden {
+  display: block;
+  margin: 0 10px;
+  width: auto;
+}
+
+.fas,
+.far {
+  color: $primary-color;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 900px) {
+    align-items: flex-start;
+  }
+}
+
+.cta {
+  text-align: center;
+  @media (min-width: 900px) {
+    text-align: left;
+  }
+}
+
+.cta__badge {
+  display: inline-block;
+  align-self: center;
+  margin-top: 0;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  padding: 10px 10px 4px 10px;
+  background: $primary-color;
+  color: $background-color;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.skills {
+  text-align: center;
+  @media (min-width: 900px) {
+    text-align: left;
+  }
+}
+
+.footer-container {
+  margin-bottom: 100px;
+}

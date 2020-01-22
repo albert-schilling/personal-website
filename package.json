@@ -1,0 +1,27 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal website by frontend developer Albert Schilling",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel -d docs src/index.html",
+    "build": "parcel build -d docs --public-url=./ src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/albert-schilling/personal-website.git"
+  },
+  "author": "Albert Schilling <albertschilling@gmx.net> (http://www.albert-schilling.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albert-schilling/personal-website/issues"
+  },
+  "homepage": "https://github.com/albert-schilling/personal-website#readme",
+  "dependencies": {
+    "parcel-bundler": "1.12.4"
+  },
+  "devDependencies": {
+    "sass": "1.25.0"
+  }
+}
