@@ -440,6 +440,38 @@ aside {
   text-decoration: none;
 }
 
+.progress-bar__container {
+  display: flex;
+  justify-content: center;
+}
+
+.progress-bar {
+  border: 1px solid #0a0a0a;
+  border-radius: 4px;
+  width: 80%;
+  display: flex;
+}
+
+.progress-bar__progress {
+  background: #fbc403;
+  width: 75%;
+  height: 100%;
+  padding: 4px;
+  text-align: center;
+}
+
+.progress-bar__animate {
+  animation: progress-bar__animate 2s ease-in-out forwards;
+}
+
+@keyframes progress-bar__animate {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 75%;
+  }
+}
 /*  Utility Classes
 */
 .row {
