@@ -238,7 +238,7 @@ aside {
   max-width: 275px;
   width: 100%;
   align-self: center;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 @media (min-width: 900px) {
   .img-portrait--left {
@@ -263,7 +263,7 @@ aside {
   display: inline-block;
   margin-bottom: 4px;
   border-radius: 6px;
-  padding: 10px 10px 4px 10px;
+  padding: 2px 10px 4px 10px;
   background: #fbc403;
   color: #0a0a0a;
   font-size: 1.2rem;
@@ -273,10 +273,14 @@ aside {
   display: inline-block;
   margin-bottom: 4px;
   border-radius: 6px;
-  padding: 10px 10px 4px 10px;
+  padding: 2px 10px 4px 10px;
   border: 1px solid #fbc403;
   color: #fbc403;
   font-size: 1.2rem;
+}
+.badge--border:hover {
+  background: #fbc403;
+  color: #343a40;
 }
 
 .large-unicode {
@@ -337,6 +341,7 @@ aside {
 
 .cta {
   text-align: center;
+  cursor: pointer;
 }
 @media (min-width: 900px) {
   .cta {
@@ -350,7 +355,7 @@ aside {
   margin-top: 0;
   margin-bottom: 4px;
   border-radius: 6px;
-  padding: 10px 10px 4px 10px;
+  padding: 2px 10px 4px 10px;
   background: #fbc403;
   color: #343a40;
   font-size: 1.6rem;
@@ -456,11 +461,10 @@ aside {
 .progress-bar__progress {
   width: 0;
   height: 100%;
-  padding: 4px;
+  padding: 4px 10px;
   background: #fbc403;
-  color: #343a40;
-  text-align: center;
-  font-weight: 900;
+  color: #0a0a0a;
+  font-weight: 500;
   white-space: nowrap;
   transition: width 1.5s ease-in-out;
 }

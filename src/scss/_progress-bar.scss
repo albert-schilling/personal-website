@@ -14,11 +14,12 @@
 .progress-bar__progress {
   width: 0;
   height: 100%;
-  padding: 4px;
+  padding: 4px 10px;
   background: $primary-color;
-  color: $background-color;
-  text-align: center;
-  font-weight: 900;
+  // color: $background-color;
+  color: $dark;
+  // text-align: center;
+  font-weight: 500;
   white-space: nowrap;
   transition: width 1.5s ease-in-out;
 }
