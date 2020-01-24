@@ -118,8 +118,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/script.js":[function(require,module,exports) {
-// Function checkInSight to calculate if an element with specified className
+// Initial function call
+checkInSight('fade-effect', 'fade-out');
+changeWidthIfInSight('progress-bar__number'); // Add scroll event and call specified functions
+
+var mainElement = document.getElementsByTagName('main')[0];
+mainElement.addEventListener('scroll', function () {
+  checkInSight('fade-effect', 'fade-out');
+});
+mainElement.addEventListener('scroll', function () {
+  changeWidthIfInSight('progress-bar__number');
+}); // Function checkInSight to calculate if an element with specified className
 // is inside the viewport (> 150px) and then toggle specified className "toggleClass"
+
 function checkInSight(className, toggleClass) {
   var fadeOutArticlesArray = document.getElementsByClassName(className);
 
@@ -142,65 +153,36 @@ function checkInSight(className, toggleClass) {
       }
     }
   }
-} // Initial function call
+} // function changeWidthIfInSight that changes the width of a parentNode
+// according to the innerHTML of an element
+// if this element is inside the viewport
 
 
-checkInSight('fade-effect', 'fade-out');
-ifInSightStartFunc('progress-bar__number', writeWidthOnSight, 'progress-bar__number', writeZeroWidthIfNotInSight, 'progress-bar__number'); // Add scroll event and call specified functions
-
-var mainElement = document.getElementsByTagName('main')[0];
-mainElement.addEventListener('scroll', function () {
-  checkInSight('fade-effect', 'fade-out');
-});
-mainElement.addEventListener('scroll', function () {
-  ifInSightStartFunc('progress-bar__container', writeWidthOnSight, 'progress-bar__number', writeZeroWidthIfNotInSight, 'progress-bar__number');
-}); // Function ifInSightStartFunc to calculate if an element with specified className
-// is inside the viewport (> 150px) and then start specified function
-
-function ifInSightStartFunc(className, visibleFunc, visibleFuncParam, unvisibleFunc, unvisibleFuncParam) {
+function changeWidthIfInSight(className) {
   var targetElementsArray = document.getElementsByClassName(className);
-  console.log(targetElementsArray);
-  console.log(targetElementsArray[0]);
 
   for (var i = 0; i < targetElementsArray.length; i++) {
-    console.log(i);
-    console.log(targetElementsArray[i]);
     var targetElement = targetElementsArray[i];
-    console.log(targetElement);
+    var targetElementParent = targetElement.parentNode;
+    console.log(targetElementParent);
     var heightWindow = window.innerHeight;
-    var elementTop = targetElement.getBoundingClientRect().top;
+    var elementTop = targetElementParent.getBoundingClientRect().top;
+    console.log("".concat(elementTop, " ElementTop"));
+    console.log("".concat(heightWindow, " heightWindow"));
     var difference = heightWindow - elementTop;
-    console.log(difference);
+    console.log(targetElement);
+    console.log("".concat(difference, " difference"));
 
     if (difference < 150) {
-      unvisibleFunc(unvisibleFuncParam);
-      console.log('not visible');
+      console.log("Progress bar is not in sight.");
+      var _targetElementParent = targetElement.parentNode;
+      _targetElementParent.style.width = 0;
     } else {
-      visibleFunc(visibleFuncParam);
-      console.log('visible');
+      console.log("Progress bar is in sight.");
+      var _targetElementParent2 = targetElement.parentNode;
+      var targetElementWidth = targetElement.innerHTML;
+      _targetElementParent2.style.width = targetElementWidth;
     }
-  }
-} // take content from specified class and set as width into parentNode
-
-
-function writeWidthOnSight(className) {
-  var el = document.getElementsByClassName(className);
-
-  for (var i = 0; i < el.length; i++) {
-    var elParent = el[i].parentNode;
-    var elWidth = el[i].innerHTML;
-    elParent.style.width = elWidth; // const elemNumber = elem[0].firstChild.innerHTML
-    // elem[0].style.width = `${elemNumber}%`
-  }
-} // Set width to 0 if not in sight:
-
-
-function writeZeroWidthIfNotInSight(className) {
-  var el = document.getElementsByClassName(className);
-
-  for (var i = 0; i < el.length; i++) {
-    var elParent = el[i].parentNode;
-    elParent.style.width = 0;
   }
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -231,7 +213,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57828" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58185" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

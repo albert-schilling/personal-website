@@ -1,3 +1,17 @@
+// Initial function call
+checkInSight('fade-effect', 'fade-out')
+changeWidthIfInSight('progress-bar__number')
+
+// Add scroll event and call specified functions
+const mainElement = document.getElementsByTagName('main')[0]
+
+mainElement.addEventListener('scroll', () => {
+  checkInSight('fade-effect', 'fade-out')
+})
+mainElement.addEventListener('scroll', () => {
+  changeWidthIfInSight('progress-bar__number')
+})
+
 // Function checkInSight to calculate if an element with specified className
 // is inside the viewport (> 150px) and then toggle specified className "toggleClass"
 function checkInSight(className, toggleClass) {
@@ -25,82 +39,31 @@ function checkInSight(className, toggleClass) {
   }
 }
 
-// Initial function call
-checkInSight('fade-effect', 'fade-out')
-
-ifInSightStartFunc(
-  'progress-bar__number',
-  writeWidthOnSight,
-  'progress-bar__number',
-  writeZeroWidthIfNotInSight,
-  'progress-bar__number'
-)
-
-// Add scroll event and call specified functions
-const mainElement = document.getElementsByTagName('main')[0]
-
-mainElement.addEventListener('scroll', () => {
-  checkInSight('fade-effect', 'fade-out')
-})
-mainElement.addEventListener('scroll', () => {
-  ifInSightStartFunc(
-    'progress-bar__container',
-    writeWidthOnSight,
-    'progress-bar__number',
-    writeZeroWidthIfNotInSight,
-    'progress-bar__number'
-  )
-})
-
-// Function ifInSightStartFunc to calculate if an element with specified className
-// is inside the viewport (> 150px) and then start specified function
-function ifInSightStartFunc(
-  className,
-  visibleFunc,
-  visibleFuncParam,
-  unvisibleFunc,
-  unvisibleFuncParam
-) {
+// function changeWidthIfInSight that changes the width of a parentNode
+// according to the innerHTML of an element
+// if this element is inside the viewport
+function changeWidthIfInSight(className) {
   const targetElementsArray = document.getElementsByClassName(className)
-  console.log(targetElementsArray)
-  console.log(targetElementsArray[0])
   for (let i = 0; i < targetElementsArray.length; i++) {
-    console.log(i)
-    console.log(targetElementsArray[i])
-    let targetElement = targetElementsArray[i]
+    const targetElement = targetElementsArray[i]
+    const targetElementParent = targetElement.parentNode
+    console.log(targetElementParent)
+    const heightWindow = window.innerHeight
+    const elementTop = targetElementParent.getBoundingClientRect().top
+    console.log(`${elementTop} ElementTop`)
+    console.log(`${heightWindow} heightWindow`)
+    const difference = heightWindow - elementTop
     console.log(targetElement)
-    let heightWindow = window.innerHeight
-    let elementTop = targetElement.getBoundingClientRect().top
-    let difference = heightWindow - elementTop
-    console.log(difference)
-
+    console.log(`${difference} difference`)
     if (difference < 150) {
-      unvisibleFunc(unvisibleFuncParam)
-      console.log('not visible')
+      console.log(`Progress bar is not in sight.`)
+      const targetElementParent = targetElement.parentNode
+      targetElementParent.style.width = 0
     } else {
-      visibleFunc(visibleFuncParam)
-      console.log('visible')
+      console.log(`Progress bar is in sight.`)
+      const targetElementParent = targetElement.parentNode
+      const targetElementWidth = targetElement.innerHTML
+      targetElementParent.style.width = targetElementWidth
     }
-  }
-}
-
-// take content from specified class and set as width into parentNode
-function writeWidthOnSight(className) {
-  const el = document.getElementsByClassName(className)
-  for (let i = 0; i < el.length; i++) {
-    const elParent = el[i].parentNode
-    const elWidth = el[i].innerHTML
-    elParent.style.width = elWidth
-    // const elemNumber = elem[0].firstChild.innerHTML
-    // elem[0].style.width = `${elemNumber}%`
-  }
-}
-
-// Set width to 0 if not in sight:
-function writeZeroWidthIfNotInSight(className) {
-  const el = document.getElementsByClassName(className)
-  for (let i = 0; i < el.length; i++) {
-    const elParent = el[i].parentNode
-    elParent.style.width = 0
   }
 }
