@@ -442,36 +442,33 @@ aside {
 
 .progress-bar__container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .progress-bar {
   border: 1px solid #0a0a0a;
-  border-radius: 4px;
   width: 80%;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .progress-bar__progress {
-  background: #fbc403;
-  width: 75%;
+  width: 0;
   height: 100%;
   padding: 4px;
+  background: #fbc403;
+  color: #343a40;
   text-align: center;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: width 1.5s ease-in-out;
 }
 
-.progress-bar__animate {
-  animation: progress-bar__animate 2s ease-in-out forwards;
+.progress-bar__number {
+  display: none;
 }
 
-@keyframes progress-bar__animate {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 75%;
-  }
-}
 /*  Utility Classes
 */
 .row {

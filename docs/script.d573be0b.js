@@ -119,7 +119,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/script.js":[function(require,module,exports) {
 // Function checkInSight to calculate if an element with specified className
-// is inside the viewport (> 100px) and then toggle specified className "toggleClass"
+// is inside the viewport (> 150px) and then toggle specified className "toggleClass"
 function checkInSight(className, toggleClass) {
   var fadeOutArticlesArray = document.getElementsByClassName(className);
 
@@ -138,19 +138,71 @@ function checkInSight(className, toggleClass) {
     } else {
       if (fadeOutArticle.classList.contains(toggleClass)) {
         // console.log(`Article with ID "${ArticleID}" is in sight.`);
-        fadeOutArticle.classList.remove("fade-out"); // console.log(`Class "${ArticleID}" has been removed.`);
+        fadeOutArticle.classList.remove('fade-out'); // console.log(`Class "${ArticleID}" has been removed.`);
       }
     }
   }
-} // Initial call of function checkInSight
+} // Initial function call
 
 
-checkInSight('fade-effect', 'fade-out'); // Add scroll event and call specified functions
+checkInSight('fade-effect', 'fade-out');
+ifInSightStartFunc('progress-bar__number', writeWidthOnSight, 'progress-bar__number', writeZeroWidthIfNotInSight, 'progress-bar__number'); // Add scroll event and call specified functions
 
 var mainElement = document.getElementsByTagName('main')[0];
 mainElement.addEventListener('scroll', function () {
   checkInSight('fade-effect', 'fade-out');
 });
+mainElement.addEventListener('scroll', function () {
+  ifInSightStartFunc('progress-bar__container', writeWidthOnSight, 'progress-bar__number', writeZeroWidthIfNotInSight, 'progress-bar__number');
+}); // Function ifInSightStartFunc to calculate if an element with specified className
+// is inside the viewport (> 150px) and then start specified function
+
+function ifInSightStartFunc(className, visibleFunc, visibleFuncParam, unvisibleFunc, unvisibleFuncParam) {
+  var targetElementsArray = document.getElementsByClassName(className);
+  console.log(targetElementsArray);
+  console.log(targetElementsArray[0]);
+
+  for (var i = 0; i < targetElementsArray.length; i++) {
+    console.log(i);
+    console.log(targetElementsArray[i]);
+    var targetElement = targetElementsArray[i];
+    console.log(targetElement);
+    var heightWindow = window.innerHeight;
+    var elementTop = targetElement.getBoundingClientRect().top;
+    var difference = heightWindow - elementTop;
+    console.log(difference);
+
+    if (difference < 150) {
+      unvisibleFunc(unvisibleFuncParam);
+      console.log('not visible');
+    } else {
+      visibleFunc(visibleFuncParam);
+      console.log('visible');
+    }
+  }
+} // take content from specified class and set as width into parentNode
+
+
+function writeWidthOnSight(className) {
+  var el = document.getElementsByClassName(className);
+
+  for (var i = 0; i < el.length; i++) {
+    var elParent = el[i].parentNode;
+    var elWidth = el[i].innerHTML;
+    elParent.style.width = elWidth; // const elemNumber = elem[0].firstChild.innerHTML
+    // elem[0].style.width = `${elemNumber}%`
+  }
+} // Set width to 0 if not in sight:
+
+
+function writeZeroWidthIfNotInSight(className) {
+  var el = document.getElementsByClassName(className);
+
+  for (var i = 0; i < el.length; i++) {
+    var elParent = el[i].parentNode;
+    elParent.style.width = 0;
+  }
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -179,7 +231,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52125" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57758" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
