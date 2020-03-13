@@ -335,7 +335,11 @@ aside {
 }
 @media (min-width: 900px) {
   .contact {
+    flex-direction: row;
     align-items: flex-start;
+  }
+  .contact a {
+    margin-right: 24px;
   }
 }
 
