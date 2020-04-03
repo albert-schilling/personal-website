@@ -34,6 +34,7 @@
     <header>
       <nav class="navbar" role="navigation">
         <a class="navbar__brandname" href="#start">Albert Schilling</a>
+        <a class="navbar__item" href="#projects">Projects</a>
         <a class="navbar__item" href="#references">References</a>
         <a class="navbar__item" href="#biography">Bio</a>
         <a class="navbar__item" href="#skills">Skills</a>
@@ -41,6 +42,9 @@
         <a class="navbar__item" href="#contact">Contact</a>
         <span class="navbar__toggler">&#x2630;</span>
         <ul class="navbar__dropdown">
+          <li class="navbar__dropdown__item">
+            <a class="navbar__dropdown__link" href="#projects">Projects</a>
+          </li>
           <li class="navbar__dropdown__item">
             <a class="navbar__dropdown__link" href="#references">References</a>
           </li>
@@ -59,7 +63,6 @@
         </ul>
       </nav>
     </header>
-
     <main>
       <article class="row fade-effect fade-out" id="start">
         <section class="column column--3">
@@ -69,7 +72,7 @@
           <img
             src="img/2019-Portrait-Albert-Schilling-square-900px.jpg"
             class="img-portrait--left"
-            alt=""
+            alt="Portrait of Albert Schilling, an agile web developer based in Hamburg."
           />
           <p class="mb-0 skills">
             <span class="badge--border"><strong>React</strong></span>
@@ -93,8 +96,81 @@
           <img
             src="img/2019-Portrait-Albert-Schilling-square-900px.jpg"
             class="img-portrait--right"
-            alt=""
+            alt="Portrait of Albert Schilling, an agile web developer based in Hamburg."
           />
+        </section>
+      </article>
+      
+      </article>
+      <article id="projects" class="fade-effect fade-out">
+        <h2>Projects</h2>
+        <section class="text-center">
+          <a href="https://ciceroic.web.app/" target="_blank">
+            <img
+              src="img/ciceroic_logo.svg"
+              class="img-reference"
+              alt="Logo of Ciceroic - The web platform that helps you become a heroic speaker"
+            />
+          </a>
+          <h3 class="mb-0">Ciceroic</h3>
+          <p>
+            React Web Application<br />
+            Upload your speech and improve your rhetoric skills based on the
+            community's feedback
+          </p>
+          <p><h4>Watch my project and applicant video:</h4>
+            <iframe class="youTubeVideo" width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/n8stgg25kGc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </p>
+          <p>
+            <b>Built with:</b> <br />
+            React, Google Firebase Firestore & Storage
+          </p>
+          <p>
+            <b>Tested with:</b> <br />
+            Jest, Cypress, Firebase Emulator
+          </p>
+          <p>
+            <b>Documented with:</b> <br />
+            Storybook
+          </p>
+          <p>
+            <b>Links:</b> <br />
+            <a href="https://ciceroic.web.app/" target="_blank">Website</a>
+            <a
+              href="https://github.com/albert-schilling/ciceroic"
+              target="_blank"
+              >Project on GitHub</a
+            >
+          </p>
+        </section>
+        <section class="text-center">
+          <a
+            href="https://devpost.com/software/1_17_b_supermarkt_status_flatten_the_queue"
+            target="_blank"
+          >
+            <img
+              src="img/flatten-the-queue.jpg"
+              alt="Image of the web applicaton 'Flatten the Queue' that helps reducing the risk of infections while shopping."
+          /></a>
+          <h3 class="mb-0">Flatten the queue</h3>
+          <p>
+            Contribution to German Hackathon against Corona: <br />
+            #WirVsVirusHack
+          </p>
+          <p>
+            Based on your location, the app tells you how crowded the
+            supermarkets nearby are to reduce the risk of infections while
+            shopping your groceries.
+          </p>
+          <p><b>Built with:</b> React, Python, Node.js, Google Maps API</p>
+          <p>I contributed to the <b>React frontend</b>.</p>
+          <p>
+            <a
+              href="https://devpost.com/software/1_17_b_supermarkt_status_flatten_the_queue"
+              target="_blank"
+              ><b>Project on DevPost</b></a
+            >
+          </p>
         </section>
       </article>
 
@@ -322,7 +398,6 @@
         </p>
       </article>
     </main>
-
     <footer>
       <nav class="footer-nav">
         <a class="footer-nav__item" href="https://github.com/albert-schilling">

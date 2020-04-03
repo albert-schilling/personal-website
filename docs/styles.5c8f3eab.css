@@ -36,13 +36,11 @@ body {
 }
 @media (min-width: 600px) {
   body {
-    grid-template: 48px auto/1fr minmax(auto, 900px) 1fr;
-    grid-template-areas: "header header header" ". main .";
+    grid-template: 48px auto/1fr;
   }
 }
 
 header {
-  grid-area: header;
   display: flex;
   align-items: flex-end;
   border-bottom: 1px solid #fbc403;
@@ -63,7 +61,9 @@ a {
 }
 
 main {
-  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   overflow-y: scroll;
   padding: 20px;
 }
@@ -79,9 +79,15 @@ footer {
 }
 
 article {
+  width: 100%;
   margin: 80px 0;
   opacity: 1;
   transition: opacity 1.5s, transform 1.5s;
+}
+@media (min-width: 600px) {
+  article {
+    max-width: 900px;
+  }
 }
 
 article:first-of-type {
@@ -146,6 +152,10 @@ mark {
 .fade-out {
   opacity: 0;
   transform: translateY(40px);
+}
+
+img {
+  max-width: 100%;
 }
 
 .footer-nav {
@@ -386,7 +396,7 @@ aside {
 @media (min-width: 600px) {
   .navbar {
     display: grid;
-    grid-template: auto/repeat(6, auto);
+    grid-template: auto/repeat(7, auto);
     grid-gap: 10px;
     padding: 0 20px;
     justify-content: flex-start;

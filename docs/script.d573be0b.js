@@ -163,27 +163,38 @@ function changeWidthIfInSight(className) {
 
   for (var i = 0; i < targetElementsArray.length; i++) {
     var targetElement = targetElementsArray[i];
-    var targetElementParent = targetElement.parentNode;
-    console.log(targetElementParent);
+    var targetElementParent = targetElement.parentNode; // console.log(targetElementParent)
+
     var heightWindow = window.innerHeight;
-    var elementTop = targetElementParent.getBoundingClientRect().top;
-    console.log("".concat(elementTop, " ElementTop"));
-    console.log("".concat(heightWindow, " heightWindow"));
-    var difference = heightWindow - elementTop;
-    console.log(targetElement);
-    console.log("".concat(difference, " difference"));
+    var elementTop = targetElementParent.getBoundingClientRect().top; // console.log(`${elementTop} ElementTop`)
+    // console.log(`${heightWindow} heightWindow`)
+
+    var difference = heightWindow - elementTop; // console.log(targetElement)
+    // console.log(`${difference} difference`)
 
     if (difference < 150) {
-      console.log("Progress bar is not in sight.");
+      // console.log(`Progress bar is not in sight.`)
       var _targetElementParent = targetElement.parentNode;
       _targetElementParent.style.width = 0;
     } else {
-      console.log("Progress bar is in sight.");
+      // console.log(`Progress bar is in sight.`)
       var _targetElementParent2 = targetElement.parentNode;
       var targetElementWidth = targetElement.innerHTML;
       _targetElementParent2.style.width = targetElementWidth;
     }
   }
+}
+
+var youTubeVideo = document.getElementsByClassName('youTubeVideo')[0];
+window.addEventListener('resize', function () {
+  return adaptYouTubeVideoHeight();
+});
+adaptYouTubeVideoHeight();
+
+function adaptYouTubeVideoHeight() {
+  var width = youTubeVideo.getBoundingClientRect().width;
+  var height = width * 0.5625;
+  youTubeVideo.height = "".concat(height, "px");
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -213,7 +224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64021" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63519" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
