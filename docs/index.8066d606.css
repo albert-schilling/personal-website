@@ -164,6 +164,12 @@ img {
   max-width: 100%;
 }
 
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 66%;
+}
+
 .footer-nav {
   display: grid;
   grid-gap: 1px;
