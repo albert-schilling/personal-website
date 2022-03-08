@@ -13,8 +13,8 @@
     "url": "https://github.com/albert-schilling/personal-website/issues"
   },
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build --dist-dir docs --public-url=./ src/index.html",
+    "start": "parcel --dist-dir docs src/index.html",
+    "build": "parcel build --dist-dir docs --public-url=/personal-website src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
