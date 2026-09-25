@@ -1,0 +1,33 @@
+// Design tokens: one ink colour, one indigo accent, one warm tint for Bardery.
+
+:root {
+  --bg: #ffffff;
+  --surface: #f7f8fa;
+  --surface-strong: #eef0f4;
+  --border: #e3e6ec;
+  --ink: #0f172a;
+  --text: #3b4658;
+  --muted: #667085;
+
+  --accent: #4338ca;
+  --accent-strong: #3730a3;
+  --accent-soft: #eef0ff;
+
+  --warm-soft: #fff6e8;
+  --warm-ink: #9a4a06;
+
+  --success: #16a34a;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.12);
+
+  --font: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --container: 1120px;
+  --gutter: 20px;
+  --header-height: 64px;
+}

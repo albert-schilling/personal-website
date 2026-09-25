@@ -7,7 +7,17 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@fontsource-variable/inter':
+        specifier: ^5.3.0
+        version: 5.3.0
     devDependencies:
+      '@parcel/packager-raw-url':
+        specifier: 2.16.3
+        version: 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
+      '@parcel/transformer-jsonld':
+        specifier: 2.16.3
+        version: 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/transformer-sass':
         specifier: 2.16.3
         version: 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
@@ -19,6 +29,9 @@ importers:
         version: 1.97.2
 
 packages:
+
+  '@fontsource-variable/inter@5.3.0':
+    resolution: {integrity: sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA==}
 
   '@lezer/common@1.5.0':
     resolution: {integrity: sha512-PNGcolp9hr4PJdXR4ix7XtixDrClScvtSCYW3rQG106oVMOOI+jFb+0+J3mbeL/53g1Zd6s0kJzaw6Ri68GmAA==}
@@ -158,6 +171,8 @@ packages:
   '@parcel/node-resolver-core@3.7.3':
     resolution: {integrity: sha512-0xdXyhGcGwtYmfWwEwzdVVGnTaADdTScx1S8IXiK0Nh3S1b4ilGqnKzw8fVsJCsBMvQA5e251EDFeG3qTnUsnw==}
     engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      '@parcel/core': '*'
 
   '@parcel/optimizer-css@2.16.3':
     resolution: {integrity: sha512-j/o9bGtu1Fe7gJYQD+/SeJ5yR7FmS6Z7e6CtTkVxjeeq0/IdR0KoZOCkJ4cRETPnm+wkyQVlY8koAAFbEEqV8w==}
@@ -199,6 +214,10 @@ packages:
     resolution: {integrity: sha512-01fufzVOs9reEDq9OTUyu5Kpasd8nGvBJEUytagM6rvNlEpmlUX5HvoAzUMSTyYeFSH+1VnX6HzK6EcQNY9Y8Q==}
     engines: {node: '>= 16.0.0', parcel: ^2.16.3}
 
+  '@parcel/packager-raw-url@2.16.3':
+    resolution: {integrity: sha512-9JCLO7N13eQDtSDDimx1xdDyRKvycA/bcGeSoLn9F1vH1pMGMMMCLwU1YUky7Sw5bO4FF9fT1AQKaReopWvQmA==}
+    engines: {node: '>= 16.0.0', parcel: ^2.16.3}
+
   '@parcel/packager-raw@2.16.3':
     resolution: {integrity: sha512-GCehb36D2xe8P8gftyZcjNr3XcUzBgRzWcasM4I0oPaLRZw4nuIu60cwTsGk6/HhUYDq8uPze+gr1L4pApRrjw==}
     engines: {node: '>= 16.0.0', parcel: ^2.16.3}
@@ -234,6 +253,8 @@ packages:
   '@parcel/resolver-default@2.16.3':
     resolution: {integrity: sha512-2bf2VRKt1fZRZbi85SBLrePr4Eid0zXUQMy+MRcFoVZ8MaxsjvWjnlxHW71cWNcRQATUOX/0w0z0Gcf7Kjrh2g==}
     engines: {node: '>= 16.0.0', parcel: ^2.16.3}
+    peerDependencies:
+      '@parcel/core': '*'
 
   '@parcel/runtime-browser-hmr@2.16.3':
     resolution: {integrity: sha512-dN5Kv6/BLaKAf80zogimvSPZYQRA+h+o3rKQLnxid2FilVRTCjz+FOcuMsT/EqAJXai1mKjrxtqlM9IJ4oSV1A==}
@@ -338,6 +359,10 @@ packages:
 
   '@parcel/transformer-json@2.16.3':
     resolution: {integrity: sha512-iT4IKGT95+S/7RBK1MUY/KxD8ad9FUlElF+w40NBLv4lm012wkYogFRhEHnyElPOByZL1aJ8GaVOGbZL9yuZfg==}
+    engines: {node: '>= 16.0.0', parcel: ^2.16.3}
+
+  '@parcel/transformer-jsonld@2.16.3':
+    resolution: {integrity: sha512-Gs7lc8i1h3il6PJQM0/FvSScTgO99U3mTkKFnb24sxPiRxePGEAAFFyyjhEhDxUA74ZVHKl1FpnuNctY9JkBug==}
     engines: {node: '>= 16.0.0', parcel: ^2.16.3}
 
   '@parcel/transformer-node@2.16.3':
@@ -839,6 +864,8 @@ packages:
 
 snapshots:
 
+  '@fontsource-variable/inter@5.3.0': {}
+
   '@lezer/common@1.5.0': {}
 
   '@lezer/lr@1.4.7':
@@ -1039,6 +1066,7 @@ snapshots:
   '@parcel/node-resolver-core@3.7.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
     dependencies:
       '@mischnic/json-sourcemap': 0.1.1
+      '@parcel/core': 2.16.3(@swc/helpers@0.5.18)
       '@parcel/diagnostic': 2.16.3
       '@parcel/fs': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/rust': 2.16.3
@@ -1046,7 +1074,6 @@ snapshots:
       nullthrows: 1.1.1
       semver: 7.7.3
     transitivePeerDependencies:
-      - '@parcel/core'
       - napi-wasm
 
   '@parcel/optimizer-css@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
@@ -1156,6 +1183,14 @@ snapshots:
       - '@parcel/core'
       - napi-wasm
 
+  '@parcel/packager-raw-url@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
+    dependencies:
+      '@parcel/plugin': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
+      '@parcel/utils': 2.16.3
+    transitivePeerDependencies:
+      - '@parcel/core'
+      - napi-wasm
+
   '@parcel/packager-raw@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
     dependencies:
       '@parcel/plugin': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
@@ -1227,10 +1262,10 @@ snapshots:
 
   '@parcel/resolver-default@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
     dependencies:
+      '@parcel/core': 2.16.3(@swc/helpers@0.5.18)
       '@parcel/node-resolver-core': 3.7.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/plugin': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
     transitivePeerDependencies:
-      - '@parcel/core'
       - napi-wasm
 
   '@parcel/runtime-browser-hmr@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
@@ -1375,6 +1410,15 @@ snapshots:
   '@parcel/transformer-json@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
     dependencies:
       '@parcel/plugin': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
+      json5: 2.2.3
+    transitivePeerDependencies:
+      - '@parcel/core'
+      - napi-wasm
+
+  '@parcel/transformer-jsonld@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
+    dependencies:
+      '@parcel/plugin': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
+      '@parcel/types': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       json5: 2.2.3
     transitivePeerDependencies:
       - '@parcel/core'

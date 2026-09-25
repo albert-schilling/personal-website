@@ -1,24 +1,4 @@
-/* Color scheme 
-
-Chinese Black #151515
-Vampire Black #0a0a0a
-Light Goldenrod Yellow #fbfcd4
-Golden Yellow #ffdd03
-Golden Poppy #fbc403
-
-font-color: #f8f9fa; light white
-
-*/
-
-// Imports:
-
-@import "colors";
-@import "base";
-@import "footer";
-@import "aside";
-@import "classes";
-@import "navbar";
-@import "sections";
-@import "utilities";
-
-
+@use "tokens";
+@use "base";
+@use "components";
+@use "sections";
