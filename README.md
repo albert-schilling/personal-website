@@ -1,5 +1,5 @@
 # Personal Website
-This is my personal website to present myself as a web developer. The site is build with **HTML** and **Vanilla JavaScript**.
+This is my personal website to present myself as an AI engineer. The site is build with **HTML** and **Vanilla JavaScript**.
 
 ## URL:
 <a href="https://albert-schilling.github.io/personal-website/" target="_blank">Visit my Personal Website</a>

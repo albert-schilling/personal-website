@@ -4,7 +4,7 @@
   "license": "MIT",
   "author": "Albert Schilling <albertschilling@gmx.net> (http://www.albert-schilling.de/)",
   "homepage": "https://github.com/albert-schilling/personal-website#readme",
-  "description": "Personal website by frontend developer Albert Schilling",
+  "description": "Personal website of software and AI engineer Albert Schilling",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/albert-schilling/personal-website.git"
