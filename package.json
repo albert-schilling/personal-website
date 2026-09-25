@@ -13,16 +13,15 @@
     "url": "https://github.com/albert-schilling/personal-website/issues"
   },
   "scripts": {
-    "start": "parcel --dist-dir docs src/index.html",
-    "build": "parcel build --dist-dir docs --public-url=/personal-website src/index.html",
+    "start": "parcel --dist-dir dist src/index.html",
+    "build": "rm -rf docs && parcel build --dist-dir docs --public-url=/personal-website src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@parcel/packager-raw-url": "2.16.3",
-    "@parcel/transformer-jsonld": "2.16.3",
-    "@parcel/transformer-sass": "2.16.3",
-    "parcel": "^2.16.3",
-    "sass": "^1.97.2"
+    "@parcel/packager-raw-url": "2.16.4",
+    "@parcel/transformer-jsonld": "2.16.4",
+    "@parcel/transformer-sass": "2.16.4",
+    "parcel": "^2.16.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {
