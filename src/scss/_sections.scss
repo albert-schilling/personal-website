@@ -811,6 +811,36 @@
     margin: 40px 0 8px;
     font-size: 1.25rem;
   }
+
+  h3 {
+    margin: 28px 0 8px;
+    font-size: 1.0625rem;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1em;
+    padding-left: 1.25em;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    margin-bottom: 0.35em;
+  }
+
+  blockquote {
+    margin: 0 0 1em;
+    padding-left: 16px;
+    border-left: 3px solid var(--border);
+    color: var(--ink);
+  }
 }
 
 .article__subtitle {
