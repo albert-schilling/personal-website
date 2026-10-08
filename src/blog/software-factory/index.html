@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Software Factory – Albert Schilling</title>
+    <meta name="title" content="The Software Factory – Albert Schilling" />
+    <meta name="description" content="A practical blueprint for turning ideas into reliable, production-ready software." />
+    <meta name="author" content="Albert Schilling" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://albert-schilling.github.io/personal-website/blog/software-factory/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://albert-schilling.github.io/personal-website/blog/software-factory/" />
+    <meta property="og:title" content="The Software Factory – Albert Schilling" />
+    <meta property="og:site_name" content="Albert Schilling" />
+    <meta property="og:description" content="A practical blueprint for turning ideas into reliable, production-ready software." />
+    <meta property="og:locale" content="en_US" />
+
+    <link rel="stylesheet" href="../../scss/styles.scss" />
+    <script type="module" src="../../js/script.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="../../index.html">Albert Schilling</a>
+        <nav class="site-nav" aria-label="Sections">
+          <a href="../../index.html#work">Work</a>
+          <a href="../../index.html#blog">Blog</a>
+          <a href="../../index.html#experience">Experience</a>
+          <a href="../../index.html#skills">Skills</a>
+        </nav>
+        <a class="button button--small" href="../../index.html#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main class="container article">
+      <p class="eyebrow">Blog</p>
+      <h1>The Software Factory</h1>
+      <p class="article__subtitle">A practical blueprint for turning ideas into reliable, production-ready software.</p>
+      <p class="article__meta">
+        Created <time datetime="2026-10-05">October 5, 2026</time> ·
+        Last updated <time datetime="2026-10-05">October 5, 2026</time>
+      </p>
+
+      <figure class="article__illustration">
+        <img src="../../img/software-factory.svg" alt="A simplified factory sending a software product along a conveyor belt" width="1297" height="768" />
+      </figure>
+
+      <h2>What is a software factory?</h2>
+      <p>
+        A software factory is a standardized, largely automated way of
+        producing software: a repeatable pipeline of tooling, practices and
+        quality checks that turns requirements into tested, deployable
+        software, much like a factory turns raw materials into finished
+        products.
+      </p>
+
+      <h2>Case study: Warp Factories</h2>
+      <p>
+        <a href="https://www.warp.dev/factories">Warp</a> started as a
+        terminal and now sells a commercial software factory. Its own
+        <a href="https://github.com/warpdotdev/warp">open-source repository</a>
+        is run by that factory, so you can watch it work in public.
+      </p>
+
+      <h3>How Warp is built</h3>
+      <ul>
+        <li><strong>Warp Terminal</strong>: an open-source Rust client (AGPL, UI framework MIT) for working with coding agents locally.</li>
+        <li><strong>Agent CLI</strong>: Warp's own coding agent, usable in any terminal.</li>
+        <li><strong>Warp Factories</strong>: the commercial cloud platform that runs fleets of agents across the development lifecycle. It works without the terminal.</li>
+      </ul>
+
+      <h3>How the factory works</h3>
+      <p>Work comes in from Slack, Jira, Linear or GitHub, and a coordinating agent (the "foreman") moves it along a line:</p>
+      <ol>
+        <li><strong>Triage</strong>: reproduce, label, decide whether the issue is ready to automate.</li>
+        <li><strong>Spec</strong>: write a product spec and a tech spec. A human approves them.</li>
+        <li><strong>Implement</strong>: write code and tests, then open a PR.</li>
+        <li><strong>Verify</strong>: agent review, evals, and computer use with screenshots or video as proof.</li>
+        <li><strong>Ship</strong>: a human always does the merge.</li>
+        <li><strong>Monitor</strong>: watch production and file new issues, which closes the loop.</li>
+      </ol>
+      <p>
+        The factory is defined as code in a <code>factory.yaml</code> that
+        names the repos, agents, models, permissions and approval gates.
+        Every run gets a score. Observer agents read those scores and open PRs
+        against the factory's own config, and benchmarks compare models and
+        harnesses on the team's past tasks.
+      </p>
+
+      <h3>Warp's definition</h3>
+      <blockquote>
+        "A cloud software factory is an automation loop around the software
+        development lifecycle […]. At each step, a mix of agents and humans
+        moves work forward."
+        (<a href="https://www.warp.dev/blog/software-factory-build-guide">Warp</a>)
+      </blockquote>
+      <p>Warp also says what does <em>not</em> count. In its view, a factory is:</p>
+      <ul>
+        <li><strong>agent-driven</strong>, so agents do the work and humans approve at gates,</li>
+        <li><strong>in the cloud</strong>, because a local-first setup is "not really a factory",</li>
+        <li><strong>defined as code</strong>, versioned like infrastructure,</li>
+        <li><strong>a closed loop</strong> that is measured (cost per PR, automation rate, PR throughput) and improves itself.</li>
+      </ul>
+      <p>
+        This is narrower than the classic idea of a standardized production
+        line. In Warp's view the factory itself is software to be engineered,
+        or in their words, "software engineering is becoming factory
+        engineering."
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>&copy; 2026 Albert Schilling · Hamburg, Germany</p>
+        <a href="../../index.html#blog">Back to home</a>
+      </div>
+    </footer>
+  </body>
+</html>
